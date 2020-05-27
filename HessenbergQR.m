@@ -1,6 +1,6 @@
 function HessenbergQR
-  [Q , R ] = qr(rand(100));
-  randomVector = 30 * rand(100 , 1);
+  [Q , R ] = qr(rand(10));
+  randomVector = 60 * rand(10 , 1) - 30;
   D = diag(randomVector);
   A = Q * D * Q';
   
@@ -19,7 +19,11 @@ function HessenbergQR
   upperTriang = baseQRAlgorithm(A);
   toc
   
-  
+  %%%% Apotelesmata:
+  %%% Autes oi methodoi den katafernoun na sgklinoun gia 100 * 100 arxiko pinaka
+  %%% akoma kai meta apo 25000 iterations
+  %%% Wstoso gia mikroterous pinakes o algorithmos qr o opoios 
+  %%% kanei ton pinaka hessenberg einai pio grhgoros
   
   
   
@@ -36,8 +40,9 @@ function [FinalUpperTriangular] = baseQRAlgorithm(A)
       printf("Average abs %f \n" , averageAbsUnderDiagonal(R))
       printf("Max abs %f \n\n" , maxAbsUnderDiagonal(R))
     end
-    
+  
   end
+  printf("Total iterations %d \n" , iterations);    
   FinalUpperTriangular = R;
 end
 function [FinalUpperTriangular] = HessenbergQRAlgorithm(A)
@@ -56,6 +61,7 @@ function [FinalUpperTriangular] = HessenbergQRAlgorithm(A)
       printf("Max abs %f \n\n" , maxAbsUnderDiagonal(R))
     end
   end
+  printf("Total iterations %d \n" , iterations);
   FinalUpperTriangular = R;
 end
 
@@ -111,8 +117,7 @@ function b = stopCriteria(A)
       end
     end
   end
-  b = 1;  
-      
+  b = 1;      
 end
 function b = averageAbsUnderDiagonal(A)
   n = size(A)(1);
@@ -135,7 +140,7 @@ function b = maxAbsUnderDiagonal(A)
   for j = 1:m
     for i = j+1: n
       if abs(A(i , j)) > b
-        b = A(i , j);
+        b = abs(A(i , j));
       end
     end
   end
