@@ -23,7 +23,7 @@ function HessenbergQR
   %%% Autes oi methodoi den katafernoun na sgklinoun gia 100 * 100 arxiko pinaka
   %%% akoma kai meta apo 25000 iterations
   %%% Wstoso gia mikroterous pinakes o algorithmos qr o opoios 
-  %%% kanei ton pinaka hessenberg einai pio grhgoros
+  %%% kanei ton pinaka hessenberg stin arxh einai pio grhgoros
   
   
   
