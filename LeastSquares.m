@@ -1,3 +1,4 @@
+%%%%%%%%%%%% ERGASIA 2 %%%%%%%%%%%%%%%%%%%
 function LeastSquares
   A = createMatrix
   b = [1 : 10]';

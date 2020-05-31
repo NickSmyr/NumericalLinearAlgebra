@@ -1,3 +1,4 @@
+%%%%%%%%%%%% ERGASIA 7 %%%%%%%%%%%%%%%%%%%
 function HessenbergQR
   [Q , R ] = qr(rand(10));
   randomVector = 60 * rand(10 , 1) - 30;
